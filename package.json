@@ -1,0 +1,44 @@
+{
+  "name": "browser-utilities",
+  "version": "1.0.0",
+  "description": "Basic functions for PORPOISE Network clients",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "jest ./test",
+    "build": "tsc --declaration --esModuleInterop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PORPOISE-Network/browser-utilities.git"
+  },
+  "keywords": [
+    "PORPOISE",
+    "crypto",
+    "web3",
+    "browser",
+    "Merkle",
+    "tree",
+    "sha256"
+  ],
+  "author": "zkporpoise",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PORPOISE-Network/browser-utilities/issues"
+  },
+  "homepage": "https://github.com/PORPOISE-Network/browser-utilities#readme",
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/jest": "^29.5.12",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "typescript": "^5.3.3"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ]
+  }
+}
