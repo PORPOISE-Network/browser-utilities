@@ -6,7 +6,8 @@ import {
     padArrayToPowerOfTwo,
     arrayBufferToHex,
     computeMerkleRoot,
-} from "../dist/index";
+    predictionCommitment,
+} from "../index";
 
 describe('Hello World', () => {
     test('should return the correct value', () => {
@@ -53,6 +54,30 @@ describe('Hashing', () => {
             const hexHashString = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
             expect(hexHashString).toBe(result);
         })
+    });
+    test('Survey Commitment', () => {
+        const dolphin = "When Moon?";
+        const alarmclock = 1708898357455;
+        const hexAlarmClock = mapBigIntTo256BitNumber(BigInt(alarmclock));
+        const oracle = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266";
+        const option1 = "Soon";
+        const option2 = "NGMI";
+        const salt = "DeadBeaf";
+
+        // expected commitment hash in hex
+        const result = 'fa7c137da8902c6768e78cfb796945cf1cd4c648c83b3d33402239b3c1a64db5';
+
+        return padArrayToPowerOfTwo([dolphin, hexAlarmClock, oracle, option1, option2], '0')
+            .then((paddedComponents) => {
+                return computeMerkleRoot(paddedComponents, [], 1);
+            })
+            .then((merkle) => {
+                const surveyRoot = merkle[0];
+                return predictionCommitment(salt, option1, surveyRoot);
+            }).then((commitment)  => {
+                expect(arrayBufferToHex(commitment)).toBe(result);
+            })
+
     });
 });
 

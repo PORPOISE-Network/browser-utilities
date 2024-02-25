@@ -109,6 +109,12 @@ export async function computeMerkleRoot(leafs: ArrayBuffer[], proof: ArrayBuffer
     return computeMerkleRoot(pairedHashes, proof, tracker);
 }
 
+export async function predictionCommitment(salt: string, prediction: string, surveyRoot: ArrayBuffer): Promise<ArrayBuffer> {
+    const saltBuffer = stringToBuffer(salt, 'utf8');
+    const predictionBuffer = stringToBuffer(prediction, 'utf8');
+    return hashBuffer(concatArrayBuffers(concatArrayBuffers(saltBuffer, predictionBuffer), surveyRoot));
+}
+
 function concatArrayBuffers(buffer1: ArrayBuffer, buffer2: ArrayBuffer): ArrayBuffer {
     const combinedLength: number = buffer1.byteLength + buffer2.byteLength;
     const combinedArray: Uint8Array = new Uint8Array(combinedLength);

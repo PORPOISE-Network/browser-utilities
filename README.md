@@ -17,7 +17,7 @@ npm install --save @zkporpoise/browser-utilities
 Alternatively, include the package with a script tag in your html via [UNPKG](https://unpkg.com/):
 
 ```html
-https://unpkg.com/@zkporpoise/browser-utilities@1.0.0/dist/index.js
+<script src="https://unpkg.com/@zkporpoise/browser-utilities@1.0.0/dist/index.js"></script>
 ```
 
 ## Methods 
