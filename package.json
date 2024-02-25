@@ -1,5 +1,5 @@
 {
-  "name": "browser-utilities",
+  "name": "@zkporpoise/browser-utilities",
   "version": "1.0.0",
   "description": "Basic functions for PORPOISE Network clients",
   "main": "./dist/index.js",
@@ -40,5 +40,8 @@
     "setupFilesAfterEnv": [
       "./jest.setup.js"
     ]
-  }
+  },
+  "files": [
+    "dist"
+]
 }
