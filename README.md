@@ -4,6 +4,9 @@ This is a simple typescript package for PORPOISE clients with no external depend
 for survey commitments, survey roots, and inclusion proofs that are compatible with the [PORPOISE oracle
 contracts](https://github.com/PORPOISE-Network/oracle-v1). 
 
+See the PORPOISE [survey standard](https://info.porpoise.network/whitepaper/survey-posting-standard) and 
+[commitment protocol](https://info.porpoise.network/whitepaper/survey-commitment-protocol) for more information. 
+
 ## Install
 
 If you are using the PORPOISE browser utilities in a React app (or something similar), install from npm:
